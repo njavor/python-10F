@@ -1,0 +1,3 @@
+import maximum
+
+print("Ez")
