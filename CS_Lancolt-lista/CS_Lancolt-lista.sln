@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_Lancolt-lista", "CS_Lancolt-lista\CS_Lancolt-lista.csproj", "{23CC39E2-36F6-4DEF-AC1B-03EB535B9AEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23CC39E2-36F6-4DEF-AC1B-03EB535B9AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CC39E2-36F6-4DEF-AC1B-03EB535B9AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CC39E2-36F6-4DEF-AC1B-03EB535B9AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CC39E2-36F6-4DEF-AC1B-03EB535B9AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0527D251-7424-4DD5-8947-E637A1FE831D}
+	EndGlobalSection
+EndGlobal
