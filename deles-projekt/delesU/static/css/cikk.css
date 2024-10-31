@@ -1,0 +1,50 @@
+main{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+}
+small{
+    margin: 0.75em 0;
+    font-size: 10pt;
+}
+h2, .solid-line{
+    margin: 0.5em 0;
+}
+.tartalom p{
+    margin-bottom: 1em;
+    text-align: justify;
+}
+.tartalom pre{
+    white-space: pre-wrap;
+    
+    font-size: 18pt;
+    font-weight: 600;
+    font-style: italic;
+    text-align: justify;
+    
+    background-color: var(--hov);
+    
+    margin: 1.5em 2em;
+    padding: 0.5em;
+}
+.tartalom a{
+    font-weight: 600;
+    color: var(--hov);
+}
+.tartalom a:hover{
+    cursor: pointer;
+    color: var(--hovL);
+}
+.tartalom img{
+    width: 100%;
+}
+
+.tartalom h4{ /*képaláírás*/
+    margin: -1.5em 0 1.5em 0;
+
+    line-height: 100%;
+
+    font-weight: 400;
+    font-style: italic;
+    font-size: 10pt;
+}

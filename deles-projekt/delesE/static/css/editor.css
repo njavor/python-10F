@@ -1,0 +1,59 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.box{
+    margin: 4em 0;
+
+    place-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+
+    background-color: var(--hov);
+    color: var(--themeL);
+    padding: 2em 6em 5em 6em;
+}
+.box h1{
+    margin-bottom: 0.25em;
+    color: var(--themeBut);
+}
+.box form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.5em;
+}
+.box label{
+    font-size: 20px;
+    font-weight: 700;
+}
+.box form input{
+    display: block;
+    width: 350px;
+
+    font-size: 18px;
+    padding: 0 0.3em;
+}
+.box form button{
+    background-color: var(--themeBut);
+    color: var(--themeL);
+
+    margin-top: 1.5em;
+    align-self: center;
+
+    font-size: 18pt;
+    font-weight: 700;
+
+    padding: 0.5em 1em;
+}
+.box form button:hover{
+    background-color: var(--themeL);
+    color: var(--hov);
+    cursor: pointer;
+}

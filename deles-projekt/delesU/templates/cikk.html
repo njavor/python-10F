@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cikk.css' %}">
+{%endblock%}
+
+{% block title %} {{ cikk.cim }} - Deles {% endblock %}
+
+{%block content%}
+<article>
+    <h1>{{ cikk.cim }}</h1>
+    <small><a href="">{{ cikk.szerzo.user.last_name }} {{ cikk.szerzo.user.first_name}}</a> — <a href="">{{ cikk.kategoria }}</a> — {{ cikk.datum }}</small>
+    <hr class="solid-line">
+    <img src="{{ cikk.fokep }}" alt="">
+    <div class="tartalom">{{ cikk.tartalom|safe }}</div>
+</article>
+
+{%endblock%}

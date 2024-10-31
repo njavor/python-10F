@@ -1,0 +1,29 @@
+main{
+    text-align: center;
+}
+main h1{
+    margin-bottom: 1em;
+}
+.imp h2{
+    margin-bottom: 0.5em;
+}
+.imp h3{
+    font-weight: 600;
+}
+.imp h3 a{
+    font-weight: 800;
+}
+.imp ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 4em;
+}
+.imp ul li, main ul a li{
+    font-size: 18pt;
+    font-weight: 400;
+}
+.imp a:hover{
+    color: var(--hov);
+}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/editor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/addCikkE.css' %}">
+{%endblock%}
+
+{% block title %} Új cikk - Deles {% endblock %}
+
+{%block contentE%}
+    <div class="box">
+        <h1>Új cikk beküldése</h1>
+        <form class="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>BEKÜLDÉS</button>
+        </form>
+    </div>
+{%endblock%}

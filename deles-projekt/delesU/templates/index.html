@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{%endblock%}
+
+{% block title %} Deles {% endblock %}
+
+{%block content%}
+<div class="kiemelt">
+    <article class="main">
+        <a href="">
+            <img src="media/cikk/1.jpg" alt="">
+            <h1>Lorem, ipsum dolor</h1>
+            <p>
+            </p>
+        </a>
+    </article>
+    <div class="side">
+        {% for cikk in cikkek %}
+        <article class="kSlide">
+            <a href="{% url 'cikk' cikk.kategoria.slug cikk.pk %}"><h2>{{ cikk.cim }}</h2></a>
+            <small><a href="">{{ cikk.szerzo.user.last_name }} {{ cikk.szerzo.user.first_name }}</a> — <a href="">{{ cikk.kategoria.nev }}</a></small>
+            <a href="{% url 'cikk' cikk.kategoria.slug cikk.pk %}"><p>{{ cikk.rovtartalom }}</p></a>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="rovatok">
+    <div class="kultura">
+        <div class="rcim">            
+            <a href=""><h1>Kultúra</h1></a>
+            <hr class="solid-line">
+        </div>
+
+        {% for cikk in kult|slice:3 %}
+        <article class="Mart">
+            <a href="">
+                <img src="" alt="">
+                <h2>{{ cikk.cim }}</h2>
+                <p>{{ cikk.rovtartalom }}</p>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+    
+    <div class="interjuk">
+        <div class="rcim">
+            <a href=""><h1>Interjúk</h1></a>
+            <hr class="solid-line">
+        </div>
+
+        {% for cikk in inter|slice:3 %}
+        <article>
+            <a href="">
+                <img src="" alt="">
+                <h2>{{ cikk.cim }}</h2>
+                <p>{{ cikk.rovtartalom }}</p>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+    
+    
+    <div class="diakelet">
+        <div class="rcim">
+            <a href=""><h1>Diákélet</h1></a>
+            <hr class="solid-line">
+        </div>
+
+        {% for cikk in diak|slice:3 %}
+        <article>
+            <a href="">
+                <img src="" alt="">
+                <h2>{{ cikk.cim }}</h2>
+                <p>{{ cikk.rovtartalom }}</p>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+
+<hr class="solid-line">
+
+<div class="friss">
+    <ul>
+        {% for cikk in cikkek %}
+            <article>
+                <a href="{% url 'cikk' cikk.kategoria.slug cikk.pk %}"><h2>{{ cikk.cim }}</h2></a>
+                <small><a href="">{{ cikk.szerzo.user.last_name }} {{ cikk.szerzo.user.first_name }}</a> — <a href="">{{ cikk.kategoria }}</a></small>
+                <a href="{% url 'cikk' cikk.kategoria.slug cikk.pk %}"><p>{{ cikk.rovtartalom }}</p></a>
+            </article>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock%}

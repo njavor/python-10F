@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/editor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sajatcikkek.css' %}">
+{%endblock%}
+
+{% block title %} Cikkeim - Deles {% endblock %}
+
+{%block contentE%}
+    <h1 class="oldalcim">Cikkeim</h1>
+    {% for cikk in kiadottak %}
+    <article>
+        <h2>{{ cikk.cim }}</h2>
+        <small>{{ cikk.kategoria.nev }} — {{ cikk.datum }}</small>
+    </article>
+    {% endfor %}
+{%endblock%}

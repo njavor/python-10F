@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/editor.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profilom.css' %}">
+{%endblock%}
+
+{% block title %} Profilom - Deles {% endblock %}
+
+{%block contentE%}
+    <h1 class="oldalcim">{{en.user.last_name}} {{en.user.first_name}}</h1>
+    
+{%endblock%}

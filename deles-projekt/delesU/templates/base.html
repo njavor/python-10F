@@ -1,0 +1,88 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% block styles%}
+    {%endblock%}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <script defer src="{% static 'js/scripts.js' %}"></script>
+    <script defer src="{% static 'js/updateDaN.js' %}"></script>
+    
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <div class="balinfo">
+        {% if user.is_authenticated %}
+        <div id="unev"><p>{{request.user.last_name}} {{request.user.first_name}}</p></div>
+        <div id="upost"><p>{{request.user.profil.pozicio.nev}}</p></div>
+        {% else %}
+        <div id="date"><p></p></div>
+        <div id="nevnap"><h3></h3></div>
+        {% endif %}
+      </div>
+
+      <a href="{% url 'home' %}"><h1>Deles</h1></a>
+      <h3>A Kőbányai Szent László Gimnázium iskolaújsága</h3>
+      
+      <div class="themeBut" onclick="changeTheme()">
+          <h4 id="ms-text"></h4>
+          <span class="moon-sun"></span>
+      </div>
+      <nav>
+          <ul>
+            {% if user.is_authenticated %}
+              <a href="{% url 'ujcikk' %}"><li>Új Cikk</li></a>
+              <a href="{% url 'sajatcikkek' %}"><li>Cikkeim</li></a>
+              {% if en %}
+                <a href=""><li>Tördelésre vár</li></a>
+              {% endif %}
+              {% if szerkesztő in poziciok %}
+                <a href=""><li>Elfogadásra vár</li></a>
+              {% endif %}
+              <a href="{% url 'levelezes' %}"><li>Levelezés</li></a>
+              <a href="{% url 'profilom' %}"><li>Profilom</li></a>
+              <a href="{% url 'logout' %}"><li style="border-right: none;">Kijelentkezés</li></a>
+            {% else %}
+              {% for kategoria in common %}
+                <a href="/{{ kategoria.slug }}"><li>{{ kategoria.nev }}</li></a>
+              {% endfor %}
+              <a href="{% url 'impresszum' %}"><li style="border-right: none;">Impresszum</li></a>
+            {% endif %}
+          </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      {% if user.is_authenticated %}
+
+      {% block contentE %}
+      {%endblock%}
+
+      {% else %}
+
+      {% block content %}
+      {%endblock%}
+
+      {% endif %}
+
+    </main>
+
+    <footer>
+      <h4>© 2022 Deles - a Kőbányai Szent László Gimnázium iskolaújsága</h4>
+    </footer>
+
+  </body>
+</html>

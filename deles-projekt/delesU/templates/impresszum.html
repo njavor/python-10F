@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/impresszum.css' %}">
+{% endblock %}
+
+{% block title %} Impresszum - Deles {% endblock %}
+
+{%block content%}
+<h1>Impresszum</h1>  
+<div class="imp">
+    <h2>Szerkesztők, olvasószerkesztők</h2>
+    <ul>
+        {% for profil in szer %}
+            <a class="szerzo" href=""><li>{{ profil.user.last_name }} {{ profil.user.first_name }} — {{ profil.evfolyam }}{{ profil.tagozat.betu }}</li></a>
+        {% endfor %}
+        {% for profil in olvszer %}
+            <a class="szerzo" href=""><li>{{ profil.user.last_name }} {{ profil.user.first_name }} — {{ profil.evfolyam }}{{ profil.tagozat.betu }}</li></a>
+        {% endfor %}
+    </ul>
+    <h2>Tördelő</h2>
+    <ul>
+        {% for profil in tordelo %}
+            <a class="szerzo" href=""><li>{{ profil.user.last_name }} {{ profil.user.first_name }} — {{ profil.evfolyam }}{{ profil.tagozat.betu }}</li></a>
+        {% endfor %}
+    </ul>
+    <h2>Felügyelőtanár</h2>
+    <ul>
+        {% for profil in tanar %}
+            <a href=""><li>{{ profil.user.last_name }} {{ profil.user.first_name }}</li></a>
+        {% endfor %}
+    </ul>
+    <h2>Felelős kiadó</h2>
+    <ul>
+        <li>Kőbányai Szent László Gimnázium Diákönkormányzata</li>
+    </ul>
+
+    <h3>Észrevétel, cikkötlet esetén keresd a szerkesztőket, vagy írj a <a class="szerzo" href="">suliujsag.szlg2021@gmail.com</a> címre.</h3>
+</div>
+{%endblock%}

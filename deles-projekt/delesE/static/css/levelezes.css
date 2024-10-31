@@ -1,0 +1,13 @@
+a{
+    height: fit-content;
+    width: fit-content;
+
+    place-self: center;
+}
+.box{
+    padding: 1em 2em;
+    margin: 2em 0 2em 0;
+}
+.box:hover{
+    opacity: 75%;
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}
+{%endblock%}
+
+{% block title %}{{kategoria_cikk.0.kategoria.nev}} - Deles{% endblock %}
+
+
+
+{% block content %}
+
+{% if kategoria_cikk %}
+<h1 class="oldalcim">{{ kategoria_cikk.0.kategoria.nev }}</h1>
+
+<div class="cikklista">
+    <ul>
+        {% for cikk in kategoria_cikk %}
+            <article>
+                <a href="{% url 'cikk' cikk.kategoria.slug cikk.pk %}"><h2>{{ cikk.cim }}</h2></a>
+                <small><a href="">{{ cikk.szerzo.user.last_name }} {{ cikk.szerzo.user.first_name }}</a> — <a href="">{{ cikk.kategoria.nev }}</a> — {{ cikk.datum }}</small>
+                <a href="{% url 'cikk' cikk.kategoria.slug cikk.pk %}"><p>{{ cikk.rovtartalom }}</p></a>
+            </article>
+        {% endfor %}
+    </ul>
+</div>
+{% else %}
+<h2>Ez az oldal nem létezik...</h2>
+{% endif %}
+
+{% endblock %}
+
